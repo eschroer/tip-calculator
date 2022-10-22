@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Tip Calculator App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+<header>
+  <img class="logo" src="./images/logo.svg">
+</header>
+<body>
+  <div class="container">
+    <section class="bill">
+      <form>
+        <label class="title" for="bill">Bill</label>
+        <input class="bill-input" type="text" name="bill" placeholder="0">
+        <div class="tip-amounts">
+          <p class="title">Select Tip %</p>
+          <div class="tip-btn-container">
+            <button class="tip-btn">5%</button>
+            <button class="tip-btn">10%</button>
+            <button class="tip-btn">15%</button>
+            <button class="tip-btn">25%</button>
+            <button class="tip-btn">50%</button>
+            <input class="tip-btn custom" type="text" name="custom-tip" placeholder="Custom">
+          </div>
+          </div>
+        <label class="title" for="people">Number of People</label>
+        <input class="people-input" type="number" name="people" placeholder="1">
+      </form>
+    </section>
+    <section class="results">
+      <div class="results-container">
+        <div class="tip-amount-text">
+          <p class="tip-amount-title">Tip Amount</p>
+          <p class="tip-amount-subtitle">/ person</p>
+        </div>
+        <div>
+          <p class="tip-amount-total">$0.00</p>
+        </div>
+    </div>
+    <div class="results-container">
+        <div class="split-total-text">
+        <p class="split-total-title">Total</p>
+        <p class="split-total-subtitle">/ person</p>
+      </div>
+        <p class="split-total-amount">$0.00</p>
+    </div>
+      <button class="reset-btn">RESET</button>
+    </section>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Emerson Schroer</a>.
+  </div>
+  <scipt src="script.js"></scipt>
+</body>
+</html>
