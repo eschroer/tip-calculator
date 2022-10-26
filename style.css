@@ -59,11 +59,19 @@ body {
     width: 150px;
     text-align: center;
     color:hsl(183, 100%, 15%);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 24px;
+    margin: 4px;
 }
 .custom::placeholder{
     color: hsl(183, 100%, 15%);
     font-family: "Space Mono", monospace;
     font-size: 20px;
+}
+.active {
+    background-color:hsl(172, 67%, 45%);
+    color:hsl(183, 100%, 15%);
 }
 .people-input{
     background-image: url(images/icon-person.svg);
@@ -120,4 +128,38 @@ body {
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width:780px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        max-width: 780px;
+    }
+    .bill{
+        max-width: 40%
+    }
+    .bill-input{
+        width: 415px;
+
+    }
+    .tip-btn {
+        width: 200px;
+    }
+    .custom {
+        width: 200px;
+    }
+    .people-input{
+        width: 415px;
+    }
+    .results{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: auto;
+        width: 300px;
+    }
+   .reset-btn{
+    align-self: flex-end;
+   }
 }
