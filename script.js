@@ -1,19 +1,21 @@
+const billForm = document.querySelector(".bill-form")
 const billInput = document.querySelector(".bill-input");
 const tipBtns = document.querySelectorAll(".tip-btn");
 const customTip = document.querySelector(".custom");
 const peopleInput = document.querySelector(".people-input");
+const zeroError = document.querySelector(".zero")
 const tipAmount = document.querySelector(".tip-amount-total");
 const splitBillAmount = document.querySelector(".split-total-amount");
 const resetBtn = document.querySelector(".reset-btn")
 
-
+billForm.addEventListener("input", activateResetBtn)
 billInput.addEventListener("input", updateTipAndTotalAmount)
 peopleInput.addEventListener("input", updateTipAndTotalAmount)
 customTip.addEventListener("input", () => {
     updateTipAndTotalAmount();
     resetActiveClass();
 })
-
+zeroError.hidden = true
 
 tipBtns.forEach((btn)=>{
     btn.addEventListener("click", (event)=>{
@@ -27,7 +29,22 @@ tipBtns.forEach((btn)=>{
 })
 
 resetBtn.addEventListener("click", ()=>{
-    window.location.reload();
+    resetBtn.classList.add("disabled");
+    billInput.value = "";
+    peopleInput.value = "";
+    tipAmount.textContent = "$0.00";
+    splitBillAmount.textContent = "$0.00";
+    resetActiveClass();
+    resetCustomTipValue();
+})
+peopleInput.addEventListener("change", function(){
+    if (peopleInput.value <= 0){
+        zeroError.hidden = false;
+        peopleInput.style.border = "1px solid red";
+    } else {
+        peopleInput.style.border = "none";
+        zeroError.hidden = true;
+    }
 })
 
 function resetActiveClass(){
@@ -37,6 +54,10 @@ function resetActiveClass(){
 }
 function resetCustomTipValue(){
     customTip.value = "";
+}
+
+function activateResetBtn(){
+    resetBtn.classList.remove("disabled")
 }
 
 function updateTipAndTotalAmount(){
